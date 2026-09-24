@@ -1,12 +1,19 @@
+import Image from "next/image";
 import { Section } from "./layout/section";
 
 export function About() {
   return (
     <Section className="about" id="about" label="03 / About">
       <div className="about__grid">
-        <div className="about__portrait" aria-label="Abstract portrait placeholder">
-          <span>AN</span>
-          <small>portrait / placeholder</small>
+        <div className="about__portrait">
+          <Image
+            src="/aakash-neupane.jpg"
+            alt="Aakash Neupane outdoors in a suit"
+            fill
+            sizes="(max-width: 48rem) 73vw, (max-width: 64rem) 40vw, 36vw"
+            priority={false}
+          />
+          <small>portrait / Aakash Neupane</small>
         </div>
         <div className="about__copy">
           <h2>A little<br /><em>about me.</em></h2>
