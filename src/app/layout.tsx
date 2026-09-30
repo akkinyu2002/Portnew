@@ -16,6 +16,10 @@ const dmMono = DM_Mono({
 export const metadata: Metadata = {
   title: "Aakash Neupane | Designer, Developer, Creator",
   description: "The portfolio of Aakash Neupane, a designer, developer and creator from Nepal.",
+  icons: {
+    icon: "/Aakas.svg",
+    shortcut: "/Aakas.svg",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
