@@ -57,6 +57,10 @@ button { color: inherit; font: inherit; }
 .section-label { margin: 0; color: var(--color-muted); font-family: var(--font-mono-family); font-size: var(--text-xs); letter-spacing: 0.08em; text-transform: uppercase; }
 .site-header { position: relative; z-index: 10; border-bottom: var(--border-subtle); }
 .site-header__inner { align-items: center; display: flex; height: var(--header-height); justify-content: space-between; }
+.site-header__brand { align-items: center; display: flex; gap: var(--space-5); }
+.site-header__meta { align-items: center; color: var(--color-muted); display: flex; font-family: var(--font-mono-family); font-size: 0.6rem; gap: var(--space-2); letter-spacing: 0.08em; text-transform: uppercase; }
+.site-header__meta-dot { animation: pulse 2s ease-in-out infinite; background: var(--color-accent); border-radius: 50%; display: block; height: 0.4rem; width: 0.4rem; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 .wordmark { font-size: var(--text-sm); font-weight: 800; letter-spacing: -0.04em; }
 .wordmark span { color: var(--color-muted); font-weight: 500; }
 .site-nav { display: flex; gap: var(--space-7); margin-left: auto; margin-right: var(--space-8); }

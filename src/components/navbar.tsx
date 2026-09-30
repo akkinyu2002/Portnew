@@ -8,6 +8,24 @@ const navigation = ["Work", "About", "Skills", "Experiments", "Contact"];
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [time, setTime] = useState<string>("");
+
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      const formatted = now.toLocaleTimeString("en-US", {
+        timeZone: "Asia/Kathmandu",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: true,
+      });
+      setTime(formatted);
+    };
+
+    updateTime();
+    const timer = setInterval(updateTime, 1000);
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     const closeOnEscape = (event: KeyboardEvent) => {
@@ -21,9 +39,17 @@ export function Navbar() {
   return (
     <header className="site-header">
       <Container className="site-header__inner">
-        <a className="wordmark" href="#top" aria-label="Aakash Neupane home" onClick={() => setMenuOpen(false)}>
-          Aakash <span>Neupane</span>
-        </a>
+        <div className="site-header__brand">
+          <a className="wordmark" href="#top" aria-label="Aakash Neupane home" onClick={() => setMenuOpen(false)}>
+            Aakash <span>Neupane</span>
+          </a>
+          {time && (
+            <span className="site-header__meta" aria-label={`Current Nepal time: ${time}`}>
+              <span className="site-header__meta-dot" aria-hidden="true" />
+              <span>NPT {time}</span>
+            </span>
+          )}
+        </div>
 
         <nav id="primary-navigation" className={`site-nav${menuOpen ? " is-open" : ""}`} aria-label="Primary navigation">
           {navigation.map((item) => (
