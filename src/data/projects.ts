@@ -8,35 +8,43 @@ export type Project = {
   description: string;
   tags: string[];
   tone: ProjectTone;
+  link?: string;
+  previewLabel?: string;
 };
 
 export const projects: Project[] = [
   {
     number: "01",
-    title: "AI Expense Tracker",
-    year: "Exploration",
-    category: "Product design / Development / AI",
-    description: "A considered way to turn everyday spending into a clearer, more useful picture.",
-    tags: ["React", "AI", "Product"],
+    title: "Interactive Quiz Game",
+    year: "Live Project",
+    category: "Frontend / Web Development",
+    description: "A fast, responsive browser trivia quiz application featuring dynamic scoring and instant answer feedback.",
+    tags: ["JavaScript", "CSS", "HTML"],
     tone: "cobalt",
+    link: "https://akkinyu2002.github.io/Boring-Projects-Just-to-be-active-/",
+    previewLabel: "play / answer / score",
   },
   {
     number: "02",
-    title: "Business Management System",
-    year: "Exploration",
-    category: "UI design / Development",
-    description: "An interface study for the busy, human parts of running a small business.",
-    tags: ["TypeScript", "Systems", "UI"],
+    title: "Lumbini Nursery Website",
+    year: "Live Project",
+    category: "Frontend / Web Development",
+    description: "A digital storefront and plant catalogue for Lumbini Nursery and Plant Service in Rupandehi, Nepal.",
+    tags: ["JavaScript", "CSS", "HTML", "TypeScript"],
     tone: "coral",
+    link: "https://akkinyu2002.github.io/Nursery-Website/",
+    previewLabel: "browse / plant / bloom",
   },
   {
     number: "03",
-    title: "Event Visual Identity",
-    year: "Selected study",
-    category: "Graphic design / Branding",
-    description: "A flexible visual language that makes an event feel present before it begins.",
-    tags: ["Identity", "Typography", "Print"],
+    title: "CSITABMC Designs",
+    year: "Live Project",
+    category: "Graphic Design / Branding",
+    description: "Promotional visual identity and event graphic designs crafted for CSITA BMC to highlight community tech initiatives.",
+    tags: ["Photoshop", "Brand Identity", "Graphic Design"],
     tone: "lime",
+    link: "https://www.behance.net/gallery/256473945/CSITABMC-Designs/modules/1495873023",
+    previewLabel: "ideas / innovation / impact",
   },
   {
     number: "04",
@@ -46,15 +54,18 @@ export const projects: Project[] = [
     description: "A digital space where structure, movement and content have room to breathe.",
     tags: ["Web", "Interaction", "Frontend"],
     tone: "violet",
+    previewLabel: "layout / code / motion",
   },
   {
     number: "05",
-    title: "Video / Motion Project",
-    year: "Ongoing",
-    category: "Video editing / Motion",
-    description: "Short-form visual experiments made to find rhythm in an idea.",
-    tags: ["Motion", "Edit", "Content"],
+    title: "Video / Motion Showcase",
+    year: "Live Project",
+    category: "Video Editing / Motion",
+    description: "Short-form motion graphics and visual edits exploring rhythm, dynamic cuts, and visual storytelling.",
+    tags: ["Premiere Pro", "After Effects", "Motion"],
     tone: "charcoal",
+    link: "https://pin.it/1jyvAem5M",
+    previewLabel: "frame / cut / rhythm",
   },
   {
     number: "06",
@@ -64,5 +75,6 @@ export const projects: Project[] = [
     description: "Small prototypes for the space between a useful tool and a playful surprise.",
     tags: ["Creative code", "3D", "Research"],
     tone: "paper",
+    previewLabel: "explore / code / render",
   },
 ];
