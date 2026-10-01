@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowDownRight, ArrowUpRight } from "lucide-react";
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import { Container } from "./layout/container";
 
 const reveal = {
@@ -10,13 +10,15 @@ const reveal = {
 };
 
 export function Hero() {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <section className="hero" aria-labelledby="hero-title">
       <Container className="hero__inner">
         <motion.div
           className="hero__kicker"
-          initial="hidden"
-          animate="visible"
+          initial={prefersReducedMotion ? false : "hidden"}
+          animate={prefersReducedMotion ? undefined : "visible"}
           variants={reveal}
         >
           <span className="hero__kicker-dot" aria-hidden="true" />
@@ -24,7 +26,11 @@ export function Hero() {
         </motion.div>
 
         <div className="hero__main">
-          <motion.div initial="hidden" animate="visible" variants={reveal}>
+          <motion.div
+            initial={prefersReducedMotion ? false : "hidden"}
+            animate={prefersReducedMotion ? undefined : "visible"}
+            variants={reveal}
+          >
             <p className="hero__overline">Designer / Developer / Creator</p>
             <h1 className="hero__title" id="hero-title">
               <span>Aakash</span>
@@ -35,9 +41,9 @@ export function Hero() {
           <motion.div
             className="hero__signal"
             aria-label="A subtle visual representing design, development and exploration"
-            initial={{ opacity: 0, scale: 0.92, rotate: -8 }}
-            animate={{ opacity: 1, scale: 1, rotate: -8 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.92, rotate: -8 }}
+            animate={prefersReducedMotion ? undefined : { opacity: 1, scale: 1, rotate: -8 }}
+            transition={prefersReducedMotion ? undefined : { duration: 0.8, delay: 0.2 }}
           >
             <span className="hero__signal-ring" aria-hidden="true" />
             <span className="hero__signal-word">design</span>

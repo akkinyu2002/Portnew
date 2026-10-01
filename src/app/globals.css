@@ -250,6 +250,7 @@ button { color: inherit; font: inherit; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .site-header__meta-dot { animation: none; }
   *, *::before, *::after { transition-duration: 0.01ms !important; }
   .about__portrait:hover img { filter: saturate(0.9) contrast(0.98); transform: none; }
 }
